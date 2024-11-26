@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rive Fullscreen Canvas</title>
+    <style>
+        html, body {
+            background: #f0f0f0;
+    		margin: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #button {
+            background: #f0f0f0;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+                }
+
+        #canvas {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="button">
+        <canvas id="canvas"></canvas>
+    </div>
+    <script src="https://unpkg.com/@rive-app/canvas@2.10.3"></script>
+    <script>
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Fill the canvas, cropping Rive if necessary
+        let layout = new rive.Layout({
+            fit: rive.Fit.Cover,
+        });
+        
+        const r = new rive.Rive({
+            src: 'https://cdn.rive.app/animations/vehicles.riv',
+            canvas: document.getElementById('canvas'),
+            autoplay: true,
+            stateMachines: 'bumpy',
+            layout: layout,
+            onLoad: (_) => {
+                // Get the inputs via the name of the state machine
+                const inputs = r.stateMachineInputs('bumpy');
+                // Find the input you want to set a value for, or trigger
+                const bumpTrigger = inputs.find(i => i.name === 'bump');
+                button.onclick = () => bumpTrigger.fire();
+            },
+        });
+    </script>
+</body>
+</html>
