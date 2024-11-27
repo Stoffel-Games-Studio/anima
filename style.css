@@ -1,0 +1,17 @@
+html, body { margin: 0; }
+
+#canvas { display: block; }
+
+.gitHome {
+	background-color: #222;
+	margin: 50px;
+	font-family: monospace;
+}
+
+.gitHome h1 {
+	color: #f3f3f3;
+}
+
+.gitHome a {
+	color: #90ee90;
+}
