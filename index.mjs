@@ -1,13 +1,11 @@
-import "./style.css";
-
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 // Fill the canvas, cropping Rive if necessary
 let layout = new rive.Layout({
     fit: rive.Fit.Cover,
-    });
-        
+});
+
 const r = new rive.Rive({
     src: 'https://cdn.rive.app/animations/vehicles.riv',
     canvas: document.getElementById('canvas'),
