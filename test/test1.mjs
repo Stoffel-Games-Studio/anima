@@ -12,5 +12,4 @@ const r = new rive.Rive({
     autoplay: true,
     stateMachines: 'sm',
     layout: layout,
-    Color get background => Colors.transparent;
 });
