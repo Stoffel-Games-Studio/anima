@@ -3,7 +3,7 @@ canvas.height = window.innerHeight;
 
 // Fill the canvas, cropping Rive if necessary
 let layout = new rive.Layout({
-    fit: rive.Fit.Cover,
+    fit: rive.Fit.Contain,
 });
 
 const r = new rive.Rive({
