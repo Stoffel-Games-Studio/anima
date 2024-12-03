@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<body style="margin: 0;">
+    <div id="button">
+        <canvas id="canvas" style="display: block;"></canvas>
+    </div>
+    <script src="https://unpkg.com/@rive-app/canvas@2.10.3"></script>
+    <script src="./test1.mjs"></script>
+    <script>
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Fill the canvas, cropping Rive if necessary
+        let layout = new rive.Layout({
+            fit: rive.Fit.Cover,
+        });
+
+        const r = new rive.Rive({
+            src: 'https://stoffel-games-studio.github.io/anima/assets/anima.riv',
+            canvas: document.getElementById('canvas'),
+            autoplay: true,
+            stateMachines: 'sm',
+            layout: layout,
+        });
+    </script>
+
+</body>
+</html>
