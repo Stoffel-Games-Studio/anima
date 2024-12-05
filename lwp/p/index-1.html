@@ -2,7 +2,7 @@
 <html lang="en">
 <body style="margin: 0;">
     <div id="button">
-        <canvas id="canvas" style="display: block;"></canvas>
+        <canvas id="canvas" style="display: block; background-color: #1d1d1d;"></canvas>
     </div>
     <script src="https://unpkg.com/@rive-app/canvas@2.10.3"></script>
     <script>
@@ -27,7 +27,7 @@
                 // Find the input you want to set a value for, or trigger
                 const trigger = inputs.find(i => i.name === 'trig');
                 button.onclick = () => trigger.fire();
-
+                r.resizeDrawingSurfaceToCanvas();
                 },
             });
             r.pause();
