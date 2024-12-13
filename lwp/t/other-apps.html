@@ -8,7 +8,11 @@
             }
 
             .container {
-                padding: 20px;
+                margin: 0;
+                padding: 0;
+                display: grid;
+                place-content: center;
+                place-items: center;
             }
 
             h2 {
@@ -27,22 +31,30 @@
 
             a img {
                 height: 80px;
-                margin: 20px 20px 20px 0;
+                margin: 20px 10px;
                 border-radius: 10px;
                 box-shadow: 5px 5px 15px #0a0a0a, -5px -5px 15px #333333;
             }
+
+            span {
+                color: transparent;
+                padding: 100% 0;
+            } 
             
         </style>
     </head>
     <body>
         <div class="container">
+            <span>span</span>
             <h2>other apps</h2>
-            <a href="#">
-                <img src="https://stoffel-games-studio.github.io/anima/assets/anima-icon.jpg">   
-            </a>
-            <a href="#">
-                <img src="https://stoffel-games-studio.github.io/anima/assets/iotg-icon.jpg">   
-            </a>
+            <div>
+                <a href="#">
+                    <img src="https://stoffel-games-studio.github.io/anima/assets/anima-icon.jpg">   
+                </a>
+                <a href="#">
+                    <img src="https://stoffel-games-studio.github.io/anima/assets/iotg-icon.jpg">   
+                </a>
+            </div>   
         </div>
     </body>
 </html>
