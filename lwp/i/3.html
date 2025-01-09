@@ -15,20 +15,21 @@
         });
 
         const r = new rive.Rive({
-            src: 'https://stoffel-games-studio.github.io/anima/lwp/r/vehicles.riv',
+            src: 'https://stoffel-games-studio.github.io/anima/lwp/r/03-goku-ultra.riv',
             canvas: document.getElementById('canvas'),
             autoplay: true,
-            stateMachines: 'bumpy',
+            stateMachines: 'State Machine 1',
             layout: layout,
             onLoad: (_) => {
                 // Get the inputs via the name of the state machine
-                const inputs = r.stateMachineInputs('bumpy');
+                const inputs = r.stateMachineInputs('State Machine 1');
                 // Find the input you want to set a value for, or trigger
-                const bumpTrigger = inputs.find(i => i.name === 'bump');
-                button.onclick = () => bumpTrigger.fire();
+                const tapTrigger = inputs.find(i => i.name === 'tap');
+                button.onclick = () => tapTrigger.fire();
 
                 },
             });
+
     </script>
 
 </body>
