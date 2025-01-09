@@ -15,13 +15,21 @@
         });
 
         const r = new rive.Rive({
-            src: 'https://stoffel-games-studio.github.io/anima/lwp/r/spring.riv',
+            src: 'https://stoffel-games-studio.github.io/anima/lwp/r/04-pokeball-pikachu.riv',
             canvas: document.getElementById('canvas'),
             autoplay: true,
-            stateMachines: 'Motion',
+            stateMachines: 'State Machine 1',
             layout: layout,
-            
-        });
+            onLoad: (_) => {
+                // Get the inputs via the name of the state machine
+                const inputs = r.stateMachineInputs('State Machine 1');
+                // Find the input you want to set a value for, or trigger
+                const tapTrigger = inputs.find(i => i.name === 'tap');
+                button.onclick = () => tapTrigger.fire();
+
+                },
+            });
+
     </script>
 
 </body>
