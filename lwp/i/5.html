@@ -15,20 +15,22 @@
         });
 
         const r = new rive.Rive({
-            src: 'https://stoffel-games-studio.github.io/anima/lwp/r/pumpking.riv',
+            src: 'https://stoffel-games-studio.github.io/anima/lwp/r/05-spidy-sence.riv',
             canvas: document.getElementById('canvas'),
             autoplay: true,
             stateMachines: 'State Machine 1',
-            isTouchScrollEnabled: true, // might not need this
             layout: layout,
-
             onLoad: (_) => {
-                
+                // Get the inputs via the name of the state machine
+                const inputs = r.stateMachineInputs('State Machine 1');
+                // Find the input you want to set a value for, or trigger
+                const tapTrigger = inputs.find(i => i.name === 'tap');
+                button.onclick = () => tapTrigger.fire();
+
                 },
-            
-        });
+            });
+
     </script>
 
 </body>
 </html>
-
