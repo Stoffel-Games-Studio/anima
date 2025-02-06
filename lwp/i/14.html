@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<body style="margin: 0;">
+    <div id="button">
+        <canvas id="canvas" style="display: block; background-color: #1d1d1d;"></canvas>
+    </div>
+    <script src="https://unpkg.com/@rive-app/canvas@2.10.3"></script>
+    <script>
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Fill the canvas, cropping Rive if necessary
+        let layout = new rive.Layout({
+            fit: rive.Fit.Cover,
+        });
+
+        const r = new rive.Rive({
+            src: 'https://stoffel-games-studio.github.io/anima/lwp/r/14-naruto.riv',
+            canvas: document.getElementById('canvas'),
+            autoplay: true,
+            stateMachines: 'State Machine 1',
+            layout: layout,
+            // onLoad: (_) => {
+            //     // Get the inputs via the name of the state machine
+            //     const inputs = r.stateMachineInputs('State Machine 1');
+            //     // Find the input you want to set a value for, or trigger
+            //     const tapTrigger = inputs.find(i => i.name === 'Trigger 1');
+            //     button.onclick = () => tapTrigger.fire();
+
+            //     },
+            });
+
+    </script>
+
+</body>
+</html>
